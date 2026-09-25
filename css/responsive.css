@@ -1,0 +1,286 @@
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-3xl: 22px;
+        --font-size-2xl: 20px;
+        --font-size-xl: 18px;
+    }
+
+    /* Header */
+    .gov-header-inner {
+        flex-wrap: wrap;
+        padding: var(--space-sm) var(--space-md);
+        min-height: auto;
+    }
+
+    .gov-brand {
+        gap: var(--space-sm);
+    }
+
+    .gov-logo .chakra-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .gov-name {
+        font-size: var(--font-size-lg);
+    }
+
+    .gov-subtitle {
+        font-size: 10px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .gov-nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 3px solid var(--navy);
+        box-shadow: var(--shadow-lg);
+        z-index: 999;
+    }
+
+    .gov-nav-list.open {
+        display: flex;
+    }
+
+    .gov-nav-link {
+        padding: 12px var(--space-lg);
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .gov-nav {
+        position: relative;
+    }
+
+    .gov-user-area {
+        gap: var(--space-sm);
+    }
+
+    /* Utility Bar */
+    .utility-bar-inner {
+        flex-direction: column;
+        padding: 4px var(--space-md);
+        gap: 2px;
+    }
+
+    .utility-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .demo-notice {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-inner {
+        padding: 0 var(--space-md);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-secondary-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn,
+    .hero-secondary-actions .btn {
+        width: 100%;
+    }
+
+    /* Service Cards */
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Forms */
+    .form-page-inner {
+        padding: var(--space-md);
+    }
+
+    .form-navigation {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: stretch;
+    }
+
+    .form-nav-center {
+        justify-content: center;
+    }
+
+    .progress-steps {
+        overflow-x: auto;
+        gap: var(--space-sm);
+    }
+
+    .progress-step-label {
+        display: none;
+    }
+
+    /* Field wrappers */
+    .field-input-wrapper {
+        flex-wrap: nowrap;
+    }
+
+    /* Scanner */
+    .scanner-controls {
+        flex-direction: column;
+    }
+
+    .scanner-controls .btn {
+        width: 100%;
+    }
+
+    /* Review */
+    .review-field {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    .review-field-label {
+        width: auto;
+    }
+
+    .review-actions {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    /* Application Cards */
+    .app-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .app-card-actions {
+        justify-content: flex-end;
+    }
+
+    /* Resume Banner */
+    .resume-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resume-banner-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .resume-banner-actions .btn {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    /* Help */
+    .help-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Submission */
+    .submission-actions {
+        flex-direction: column;
+    }
+
+    .submission-actions .btn {
+        width: 100%;
+    }
+
+    .confirm-dialog {
+        max-width: 100%;
+    }
+
+    /* A11y toolbar */
+    .a11y-toolbar-inner {
+        justify-content: center;
+    }
+
+    /* Guardian */
+    .guardian-actions {
+        flex-direction: column;
+    }
+
+    .guardian-actions .btn {
+        width: 100%;
+    }
+
+    /* OCR */
+    .ocr-review-actions {
+        flex-direction: column;
+    }
+
+    .ocr-review-actions .btn {
+        width: 100%;
+    }
+
+    .ocr-row {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    .ocr-field-name {
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field-audio-controls {
+        flex-direction: column;
+    }
+
+    .btn-speak,
+    .btn-voice {
+        width: 36px;
+        min-height: 36px;
+        font-size: 14px;
+    }
+
+    .readiness-panel {
+        padding: var(--space-md);
+    }
+
+    .readiness-checklist {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}

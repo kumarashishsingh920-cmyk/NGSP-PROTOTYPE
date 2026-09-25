@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NSGP — Next-Generation Smart Government Forms. Prevent errors before submission — not after rejection. A smart Indian citizen-service form portal demonstration.">
+    <meta name="keywords" content="government forms, smart forms, India, digital services, citizen services">
+    <meta name="author" content="NSGP Demo Platform">
+    <title>NSGP — Next-Generation Smart Government Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/scanner.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link" id="skip-nav">Skip to Main Content</a>
+
+    <!-- Accessibility Toolbar -->
+    <div id="accessibility-toolbar" class="a11y-toolbar" role="toolbar" aria-label="Accessibility Options">
+        <div class="a11y-toolbar-inner">
+            <button id="btn-font-increase" class="a11y-btn" aria-label="Increase font size" title="Increase font size">A+</button>
+            <button id="btn-font-decrease" class="a11y-btn" aria-label="Decrease font size" title="Decrease font size">A-</button>
+            <button id="btn-high-contrast" class="a11y-btn" aria-label="Toggle high contrast" title="High contrast">◐</button>
+            <button id="btn-reduce-motion" class="a11y-btn" aria-label="Reduce motion" title="Reduce motion">⏸</button>
+            <button id="btn-screen-reader" class="a11y-btn" aria-label="Screen reader mode" title="Screen reader mode">♿</button>
+            <button id="btn-reset-a11y" class="a11y-btn" aria-label="Reset accessibility settings" title="Reset">↺</button>
+        </div>
+    </div>
+
+    <!-- Top Utility Bar -->
+    <div class="utility-bar">
+        <div class="utility-bar-inner">
+            <div class="utility-left">
+                <span class="demo-notice">⚠ NSGP is a demonstration platform and is not an official Government of India website.</span>
+            </div>
+            <div class="utility-right">
+                <button id="btn-skip-content" class="utility-link" onclick="document.getElementById('main-content').focus()">Skip to Content</button>
+                <span class="utility-sep">|</span>
+                <button id="btn-screen-reader-access" class="utility-link">Screen Reader Access</button>
+                <span class="utility-sep">|</span>
+                <div class="language-selector-wrap">
+                    <label for="language-selector" class="sr-only">Select Language</label>
+                    <select id="language-selector" class="language-selector" aria-label="Select Language">
+                        <option value="en" selected>English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="te">తెలుగు</option>
+                        <option value="mr">मराठी</option>
+                        <option value="ta">தமிழ்</option>
+                        <option value="gu">ગુજરાતી</option>
+                        <option value="kn">ಕನ್ನಡ</option>
+                        <option value="ml">മലയാളം</option>
+                        <option value="pa">ਪੰਜਾਬੀ</option>
+                        <option value="ur">اردو</option>
+                        <option value="or">ଓଡ଼ିଆ</option>
+                        <option value="as">অসমীয়া</option>
+                        <option value="sa">संस्कृत</option>
+                        <option value="ne">नेपाली</option>
+                        <option value="kok">कोंकणी</option>
+                        <option value="mai">मैथिली</option>
+                        <option value="doi">डोगरी</option>
+                        <option value="bho">भोजपुरी</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Government Header -->
+    <header class="gov-header" role="banner">
+        <div class="gov-header-inner">
+            <div class="gov-brand">
+                <div class="gov-logo" aria-hidden="true">
+                    <svg viewBox="0 0 60 60" width="48" height="48" class="chakra-logo">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#000080" stroke-width="2"/>
+                        <circle cx="30" cy="30" r="8" fill="#000080"/>
+                        <circle cx="30" cy="30" r="5" fill="#fff"/>
+                        <circle cx="30" cy="30" r="2" fill="#000080"/>
+                        <!-- 24 spokes -->
+                        <g stroke="#000080" stroke-width="1.5">
+                            <line x1="30" y1="10" x2="30" y2="22"/>
+                            <line x1="30" y1="38" x2="30" y2="50"/>
+                            <line x1="10" y1="30" x2="22" y2="30"/>
+                            <line x1="38" y1="30" x2="50" y2="30"/>
+                            <line x1="15.86" y1="15.86" x2="24.34" y2="24.34"/>
+                            <line x1="35.66" y1="35.66" x2="44.14" y2="44.14"/>
+                            <line x1="44.14" y1="15.86" x2="35.66" y2="24.34"/>
+                            <line x1="24.34" y1="35.66" x2="15.86" y2="44.14"/>
+                            <line x1="20" y1="12.68" x2="25.86" y2="23"/>
+                            <line x1="34.14" y1="37" x2="40" y2="47.32"/>
+                            <line x1="12.68" y1="20" x2="23" y2="25.86"/>
+                            <line x1="37" y1="34.14" x2="47.32" y2="40"/>
+                            <line x1="12.68" y1="40" x2="23" y2="34.14"/>
+                            <line x1="37" y1="25.86" x2="47.32" y2="20"/>
+                            <line x1="20" y1="47.32" x2="25.86" y2="37"/>
+                            <line x1="34.14" y1="23" x2="40" y2="12.68"/>
+                            <line x1="11.27" y1="24.77" x2="22.5" y2="27.5"/>
+                            <line x1="37.5" y1="32.5" x2="48.73" y2="35.23"/>
+                            <line x1="24.77" y1="48.73" x2="27.5" y2="37.5"/>
+                            <line x1="32.5" y1="22.5" x2="35.23" y2="11.27"/>
+                            <line x1="24.77" y1="11.27" x2="27.5" y2="22.5"/>
+                            <line x1="32.5" y1="37.5" x2="35.23" y2="48.73"/>
+                            <line x1="48.73" y1="24.77" x2="37.5" y2="27.5"/>
+                            <line x1="22.5" y1="32.5" x2="11.27" y2="35.23"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="gov-title">
+                    <h1 class="gov-name" data-i18n="header.title">NSGP</h1>
+                    <p class="gov-subtitle" data-i18n="header.subtitle">Next-Generation Smart Government Forms</p>
+                </div>
+            </div>
+            <nav class="gov-nav" role="navigation" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="gov-nav-list" id="gov-nav-list">
+                    <li><a href="#" class="gov-nav-link active" data-page="home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#" class="gov-nav-link" data-page="services" data-i18n="nav.services">Government Services</a></li>
+                    <li><a href="#" class="gov-nav-link" data-page="applications" data-i18n="nav.applications">My Applications</a></li>
+                    <li><a href="#" class="gov-nav-link" data-page="help" data-i18n="nav.help">Help</a></li>
+                    <li><a href="#" class="gov-nav-link" data-page="accessibility-page" data-i18n="nav.accessibility">Accessibility</a></li>
+                </ul>
+            </nav>
+            <div class="gov-user-area">
+                <div class="connection-status" id="connection-status" aria-live="polite">
+                    <span class="status-dot online"></span>
+                    <span class="status-text" data-i18n="status.online">Online</span>
+                </div>
+                <button class="gov-login-btn" id="login-btn" data-i18n="nav.login">
+                    <span class="login-icon">👤</span> Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notification Area -->
+    <div id="notification-area" class="notification-area" role="alert" aria-live="polite"></div>
+
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page active">
+            <section class="hero-section">
+                <div class="hero-inner">
+                    <div class="hero-content">
+                        <h2 class="hero-title" data-i18n="home.title">Next-Generation Smart Government Forms</h2>
+                        <p class="hero-tagline" data-i18n="home.tagline">Prevent errors before submission — not after rejection.</p>
+                        <p class="hero-desc" data-i18n="home.desc">NSGP helps citizens fill government, healthcare, education, insurance and other high-stakes forms correctly — with real-time validation, smart correction, document scanning and multilingual audio guidance.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-lg" data-action="navigate" data-target="services" data-i18n="home.findService">
+                                🔍 Find a Service
+                            </button>
+                            <button class="btn btn-secondary btn-lg" data-action="navigate" data-target="services" data-i18n="home.startNew">
+                                📝 Start New Application
+                            </button>
+                            <button class="btn btn-outline btn-lg" id="btn-resume-home" data-action="navigate" data-target="applications" data-i18n="home.continue">
+                                📂 Continue Saved Application
+                            </button>
+                        </div>
+                        <div class="hero-secondary-actions">
+                            <button class="btn btn-scan" id="btn-scan-home" data-i18n="home.scanDoc">
+                                📷 Scan a Document
+                            </button>
+                            <button class="btn btn-outline-sm" data-action="navigate" data-target="applications" data-i18n="home.checkStatus">
+                                📋 Check Application Status
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Categories -->
+            <section class="services-section" aria-labelledby="services-heading">
+                <div class="section-inner">
+                    <h3 id="services-heading" class="section-title" data-i18n="home.servicesTitle">Available Services</h3>
+
+                    <!-- Government Certificates -->
+                    <div class="service-category">
+                        <h4 class="category-title" data-i18n="categories.govCert">
+                            <span class="category-icon">🏛️</span> Government Certificates
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card" data-service="income-certificate">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📄</span>
+                                    <h5 data-i18n="services.income.title">Income Certificate</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.income.desc">Apply for income certificate for educational, financial and government purposes.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item" data-i18n="services.income.docs">📎 3 Documents Required</span>
+                                    <span class="meta-item" data-i18n="services.income.time">⏱ ~15 minutes</span>
+                                    <span class="meta-item" data-i18n="services.income.steps">📝 6 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="income-certificate" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                            <div class="service-card" data-service="caste-certificate">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📄</span>
+                                    <h5 data-i18n="services.caste.title">Caste Certificate</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.caste.desc">Apply for caste certificate for reservation, educational and government purposes.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 4 Documents Required</span>
+                                    <span class="meta-item">⏱ ~20 minutes</span>
+                                    <span class="meta-item">📝 6 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="caste-certificate" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                            <div class="service-card" data-service="residence-certificate">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📄</span>
+                                    <h5 data-i18n="services.residence.title">Residence/Domicile Certificate</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.residence.desc">Apply for residence or domicile certificate for local residency proof.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 3 Documents Required</span>
+                                    <span class="meta-item">⏱ ~15 minutes</span>
+                                    <span class="meta-item">📝 6 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="residence-certificate" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                            <div class="service-card" data-service="birth-certificate">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📄</span>
+                                    <h5 data-i18n="services.birth.title">Birth Certificate</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.birth.desc">Apply for birth certificate registration or duplicate copy.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 2 Documents Required</span>
+                                    <span class="meta-item">⏱ ~10 minutes</span>
+                                    <span class="meta-item">📝 5 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="birth-certificate" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Identity & Citizen Services -->
+                    <div class="service-category">
+                        <h4 class="category-title" data-i18n="categories.identity">
+                            <span class="category-icon">🪪</span> Identity & Citizen Services
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card" data-service="aadhaar-update">
+                                <div class="service-card-header">
+                                    <span class="service-icon">🆔</span>
+                                    <h5 data-i18n="services.aadhaar.title">Aadhaar-Related Services</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.aadhaar.desc">Aadhaar address update, correction and related services (Demo).</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 2 Documents Required</span>
+                                    <span class="meta-item">⏱ ~10 minutes</span>
+                                    <span class="meta-item">📝 5 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="aadhaar-update" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="service-category">
+                        <h4 class="category-title" data-i18n="categories.education">
+                            <span class="category-icon">🎓</span> Education
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card" data-service="scholarship">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📚</span>
+                                    <h5 data-i18n="services.scholarship.title">Scholarship Application</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.scholarship.desc">Apply for government educational scholarships and financial aid.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 5 Documents Required</span>
+                                    <span class="meta-item">⏱ ~25 minutes</span>
+                                    <span class="meta-item">📝 7 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="scholarship" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Healthcare -->
+                    <div class="service-category">
+                        <h4 class="category-title" data-i18n="categories.healthcare">
+                            <span class="category-icon">🏥</span> Healthcare
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card" data-service="health-scheme">
+                                <div class="service-card-header">
+                                    <span class="service-icon">🏥</span>
+                                    <h5 data-i18n="services.health.title">Health Scheme Application</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.health.desc">Apply for government healthcare schemes and health card registration.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 3 Documents Required</span>
+                                    <span class="meta-item">⏱ ~15 minutes</span>
+                                    <span class="meta-item">📝 5 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="health-scheme" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insurance -->
+                    <div class="service-category">
+                        <h4 class="category-title" data-i18n="categories.insurance">
+                            <span class="category-icon">🛡️</span> Insurance
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card" data-service="insurance">
+                                <div class="service-card-header">
+                                    <span class="service-icon">📋</span>
+                                    <h5 data-i18n="services.insurance.title">Insurance Application</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="services.insurance.desc">Apply for government insurance schemes and claim filing.</p>
+                                <div class="service-meta">
+                                    <span class="meta-item">📎 4 Documents Required</span>
+                                    <span class="meta-item">⏱ ~20 minutes</span>
+                                    <span class="meta-item">📝 6 Steps</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="insurance" data-i18n="services.startApplication">
+                                    Start Application →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo Mode -->
+                    <div class="demo-section">
+                        <h4 class="category-title">
+                            <span class="category-icon">🧪</span> <span data-i18n="demo.title">Demo & Testing</span>
+                        </h4>
+                        <div class="service-cards">
+                            <div class="service-card demo-card" data-service="demo-errors">
+                                <div class="service-card-header">
+                                    <span class="service-icon">🔍</span>
+                                    <h5 data-i18n="demo.errorTitle">Error Detection Demo</h5>
+                                </div>
+                                <p class="service-desc" data-i18n="demo.errorDesc">Try NSGP's intelligent error detection with a pre-filled form containing intentional errors — see how the system detects email errors, age/DOB mismatch, name inconsistency and more.</p>
+                                <button class="btn btn-primary btn-sm service-start-btn" data-service="demo-errors" data-i18n="demo.tryDemo">
+                                    🧪 Try Error Demo →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVICES PAGE -->
+        <div id="page-services" class="page">
+            <div class="page-inner">
+                <h2 class="page-title" data-i18n="services.pageTitle">Government Services</h2>
+                <div class="search-bar">
+                    <label for="service-search" class="sr-only" data-i18n="services.searchLabel">Search Services</label>
+                    <input type="search" id="service-search" class="search-input" data-i18n-placeholder="services.searchPlaceholder" placeholder="Search services (e.g., income certificate, residence, aadhaar)...">
+                    <button class="search-btn" aria-label="Search" data-i18n-aria="services.searchBtn">🔍</button>
+                </div>
+                <div class="filter-bar">
+                    <label for="category-filter" data-i18n="services.categoryFilter">Category:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all" data-i18n="services.allCategories">All Categories</option>
+                        <option value="certificates" data-i18n="categories.govCert">Government Certificates</option>
+                        <option value="identity" data-i18n="categories.identity">Identity & Citizen Services</option>
+                        <option value="education" data-i18n="categories.education">Education</option>
+                        <option value="healthcare" data-i18n="categories.healthcare">Healthcare</option>
+                        <option value="insurance" data-i18n="categories.insurance">Insurance</option>
+                    </select>
+                </div>
+                <div id="services-list" class="services-grid"></div>
+            </div>
+        </div>
+
+        <!-- MY APPLICATIONS PAGE -->
+        <div id="page-applications" class="page">
+            <div class="page-inner">
+                <h2 class="page-title" data-i18n="applications.title">My Applications</h2>
+                <div id="applications-list" class="applications-container">
+                    <div class="empty-state" id="no-applications">
+                        <span class="empty-icon">📂</span>
+                        <p data-i18n="applications.empty">You have no saved applications.</p>
+                        <button class="btn btn-primary" data-action="navigate" data-target="services" data-i18n="applications.startNew">Start New Application</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM PAGE -->
+        <div id="page-form" class="page">
+            <div class="page-inner form-page-inner">
+                <!-- Form Progress Bar -->
+                <div class="form-progress-bar" id="form-progress-bar">
+                    <div class="progress-steps" id="progress-steps"></div>
+                    <div class="progress-info">
+                        <span id="progress-step-text" data-i18n="form.stepOf">Step 1 of 6</span>
+                        <span id="form-save-status" class="save-status">
+                            <span class="save-dot"></span>
+                            <span data-i18n="form.notSaved">Not saved yet</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Readiness Score -->
+                <div class="readiness-panel" id="readiness-panel">
+                    <div class="readiness-header">
+                        <h4 data-i18n="form.readiness">Form Readiness</h4>
+                        <div class="readiness-score" id="readiness-score">
+                            <span class="readiness-percent" id="readiness-percent">0%</span>
+                            <span class="readiness-label" data-i18n="form.ready">Ready</span>
+                        </div>
+                    </div>
+                    <div class="readiness-bar">
+                        <div class="readiness-fill" id="readiness-fill" style="width:0%"></div>
+                    </div>
+                    <ul class="readiness-checklist" id="readiness-checklist"></ul>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container" id="form-container">
+                    <div class="form-header" id="form-header">
+                        <h3 id="form-title" data-i18n="form.title">Application Form</h3>
+                        <p id="form-subtitle" data-i18n="form.subtitle">Please fill in the details carefully</p>
+                    </div>
+
+                    <!-- Document Scanner Section -->
+                    <div class="scanner-section" id="scanner-section" style="display:none;">
+                        <div class="scanner-header">
+                            <h4 data-i18n="scanner.title">📷 Document Scanner</h4>
+                            <button class="btn btn-outline btn-sm" id="close-scanner" data-i18n="scanner.close">✕ Close Scanner</button>
+                        </div>
+                        <div class="scanner-body">
+                            <div class="scanner-preview" id="scanner-preview">
+                                <video id="camera-video" autoplay playsinline></video>
+                                <canvas id="camera-canvas" style="display:none;"></canvas>
+                                <img id="captured-image" style="display:none;" alt="Captured document">
+                            </div>
+                            <div class="scanner-controls">
+                                <button class="btn btn-primary" id="btn-open-camera" data-i18n="scanner.openCamera">📷 Open Camera</button>
+                                <button class="btn btn-secondary" id="btn-upload-doc" data-i18n="scanner.uploadImage">📁 Upload Image</button>
+                                <input type="file" id="doc-file-input" accept="image/*" capture="environment" style="display:none;">
+                                <button class="btn btn-primary" id="btn-capture" style="display:none;" data-i18n="scanner.capture">📸 Capture</button>
+                                <button class="btn btn-secondary" id="btn-retake" style="display:none;" data-i18n="scanner.retake">🔄 Retake</button>
+                                <button class="btn btn-primary" id="btn-process-doc" style="display:none;" data-i18n="scanner.process">🔍 Process Document</button>
+                            </div>
+                            <div class="scanner-status" id="scanner-status" style="display:none;">
+                                <div class="scanner-spinner"></div>
+                                <span id="scanner-status-text" data-i18n="scanner.reading">📄 Reading document...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OCR Review Section -->
+                    <div class="ocr-review-section" id="ocr-review-section" style="display:none;">
+                        <div class="ocr-review-header">
+                            <h4 data-i18n="ocr.title">Information Extracted from Document</h4>
+                            <span class="ocr-doc-type" id="ocr-doc-type"></span>
+                        </div>
+                        <div class="ocr-review-table" id="ocr-review-table"></div>
+                        <div class="ocr-review-actions">
+                            <button class="btn btn-primary" id="btn-use-ocr" data-i18n="ocr.useInfo">✓ Use Detected Information</button>
+                            <button class="btn btn-secondary" id="btn-review-ocr" data-i18n="ocr.review">📝 Review Before Filling</button>
+                            <button class="btn btn-outline" id="btn-rescan" data-i18n="ocr.rescan">🔄 Re-scan Document</button>
+                        </div>
+                    </div>
+
+                    <!-- Form Fields Container -->
+                    <form id="smart-form" novalidate>
+                        <div id="form-sections"></div>
+                    </form>
+
+                    <!-- Form Navigation -->
+                    <div class="form-navigation" id="form-navigation">
+                        <button class="btn btn-outline" id="btn-prev-step" data-i18n="form.previous" disabled>← Previous</button>
+                        <div class="form-nav-center">
+                            <button class="btn btn-scan" id="btn-scan-doc" data-i18n="form.scanDocument">📷 Scan Document</button>
+                            <button class="btn btn-outline-sm" id="btn-save-draft" data-i18n="form.saveDraft">💾 Save Draft</button>
+                        </div>
+                        <button class="btn btn-primary" id="btn-next-step" data-i18n="form.next">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Pre-Submission Guardian -->
+                <div class="guardian-panel" id="guardian-panel" style="display:none;">
+                    <div class="guardian-header">
+                        <h3 data-i18n="guardian.title">🛡️ PRE-SUBMISSION GUARDIAN</h3>
+                        <p data-i18n="guardian.subtitle">Final verification before submission</p>
+                    </div>
+                    <div class="guardian-status" id="guardian-status">
+                        <div class="guardian-spinner"></div>
+                        <span data-i18n="guardian.checking">🔍 Performing final verification...</span>
+                    </div>
+                    <div class="guardian-results" id="guardian-results" style="display:none;"></div>
+                    <div class="guardian-actions" id="guardian-actions" style="display:none;">
+                        <button class="btn btn-primary" id="btn-fix-issues" data-i18n="guardian.fixIssues">🔧 Fix Issues</button>
+                        <button class="btn btn-secondary" id="btn-review-app" data-i18n="guardian.reviewApp" style="display:none;">📋 Review Application</button>
+                    </div>
+                </div>
+
+                <!-- Application Review -->
+                <div class="review-panel" id="review-panel" style="display:none;">
+                    <div class="review-header">
+                        <h3 data-i18n="review.title">📋 Application Review</h3>
+                        <p data-i18n="review.subtitle">Please verify all information before submission</p>
+                    </div>
+                    <div class="review-content" id="review-content"></div>
+                    <div class="review-actions">
+                        <button class="btn btn-outline" id="btn-back-to-form" data-i18n="review.backToForm">← Back to Form</button>
+                        <button class="btn btn-primary btn-lg" id="btn-submit-app" data-i18n="review.submit">Submit Application</button>
+                    </div>
+                </div>
+
+                <!-- Submission Confirmation -->
+                <div class="submission-panel" id="submission-panel" style="display:none;">
+                    <div class="submission-success">
+                        <div class="success-icon">✅</div>
+                        <h3 data-i18n="submission.title">Application Submitted Successfully</h3>
+                        <div class="ref-number">
+                            <span data-i18n="submission.refLabel">Application Reference Number:</span>
+                            <strong id="submission-ref"></strong>
+                            <small data-i18n="submission.refNote">(Demo reference — not a real application ID)</small>
+                        </div>
+                        <div class="submission-actions">
+                            <button class="btn btn-primary" id="btn-download-ack" data-i18n="submission.download">📥 Download Acknowledgement</button>
+                            <button class="btn btn-secondary" id="btn-print-ack" data-i18n="submission.print">🖨 Print</button>
+                            <button class="btn btn-outline" data-action="navigate" data-target="applications" data-i18n="submission.backToApps">← Back to My Applications</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirmation Dialog -->
+                <div class="confirm-dialog-overlay" id="confirm-dialog" style="display:none;">
+                    <div class="confirm-dialog" role="dialog" aria-labelledby="confirm-title" aria-modal="true">
+                        <h4 id="confirm-title" data-i18n="confirm.title">Confirm Application Submission</h4>
+                        <p data-i18n="confirm.message">Please verify that the information provided is correct before submitting.</p>
+                        <div class="privacy-notice">
+                            <p data-i18n="confirm.privacy">Your information is used only to assist with this application. This is a demonstration platform.</p>
+                        </div>
+                        <label class="confirm-checkbox-label">
+                            <input type="checkbox" id="confirm-checkbox">
+                            <span data-i18n="confirm.checkboxLabel">I confirm that the information provided is correct to the best of my knowledge.</span>
+                        </label>
+                        <div class="confirm-actions">
+                            <button class="btn btn-outline" id="btn-cancel-submit" data-i18n="confirm.cancel">Cancel</button>
+                            <button class="btn btn-primary" id="btn-confirm-submit" disabled data-i18n="confirm.submit">Submit Application</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HELP PAGE -->
+        <div id="page-help" class="page">
+            <div class="page-inner">
+                <h2 class="page-title" data-i18n="help.title">Help & Guidance</h2>
+                <div class="help-content">
+                    <div class="help-card">
+                        <h4 data-i18n="help.howToUse">How to Use NSGP</h4>
+                        <ol>
+                            <li data-i18n="help.step1">Select the government service you need from the homepage or services page.</li>
+                            <li data-i18n="help.step2">Fill in the application form. Use the 🔊 speaker button beside each field to hear instructions.</li>
+                            <li data-i18n="help.step3">Use the 🎤 microphone button to fill fields using your voice.</li>
+                            <li data-i18n="help.step4">Click 📷 Scan Document to scan your documents using your camera. The system will automatically extract information.</li>
+                            <li data-i18n="help.step5">Review any validation errors and suggestions shown in real-time.</li>
+                            <li data-i18n="help.step6">The Pre-Submission Guardian will check your application before final submission.</li>
+                            <li data-i18n="help.step7">Once all checks pass, submit your application.</li>
+                        </ol>
+                    </div>
+                    <div class="help-card">
+                        <h4 data-i18n="help.features">Key Features</h4>
+                        <ul>
+                            <li data-i18n="help.feat1">🔍 Real-time validation as you type</li>
+                            <li data-i18n="help.feat2">📷 Document scanning with OCR</li>
+                            <li data-i18n="help.feat3">🔊 Audio instructions in multiple languages</li>
+                            <li data-i18n="help.feat4">🎤 Voice input for form filling</li>
+                            <li data-i18n="help.feat5">🛡️ Pre-Submission Guardian</li>
+                            <li data-i18n="help.feat6">💾 Auto-save and resume</li>
+                            <li data-i18n="help.feat7">📊 Form readiness score</li>
+                        </ul>
+                    </div>
+                    <div class="help-card">
+                        <h4 data-i18n="help.contact">Need Help?</h4>
+                        <p data-i18n="help.contactDesc">This is a demonstration platform. For actual government services, please visit the respective official government websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCESSIBILITY PAGE -->
+        <div id="page-accessibility-page" class="page">
+            <div class="page-inner">
+                <h2 class="page-title" data-i18n="a11y.title">Accessibility Statement</h2>
+                <div class="help-content">
+                    <div class="help-card">
+                        <h4 data-i18n="a11y.commitment">Our Commitment</h4>
+                        <p data-i18n="a11y.commitDesc">NSGP is committed to ensuring digital accessibility for people with diverse abilities. We continually improve the user experience for everyone and apply relevant accessibility standards.</p>
+                    </div>
+                    <div class="help-card">
+                        <h4 data-i18n="a11y.featTitle">Accessibility Features</h4>
+                        <ul>
+                            <li data-i18n="a11y.feat1">Keyboard navigation support throughout</li>
+                            <li data-i18n="a11y.feat2">Screen reader compatible with ARIA labels</li>
+                            <li data-i18n="a11y.feat3">Adjustable font sizes</li>
+                            <li data-i18n="a11y.feat4">High contrast mode</li>
+                            <li data-i18n="a11y.feat5">Reduced motion option</li>
+                            <li data-i18n="a11y.feat6">Audio guidance for all form fields</li>
+                            <li data-i18n="a11y.feat7">Voice input support</li>
+                            <li data-i18n="a11y.feat8">Clear error announcements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Government Footer -->
+    <footer class="gov-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h4>NSGP</h4>
+                    <p data-i18n="footer.subtitle">Next-Generation Smart Government Forms</p>
+                </div>
+                <div class="footer-links">
+                    <h5 data-i18n="footer.quickLinks">Quick Links</h5>
+                    <ul>
+                        <li><a href="#" data-action="navigate" data-target="services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#" data-action="navigate" data-target="applications" data-i18n="nav.applications">My Applications</a></li>
+                        <li><a href="#" data-action="navigate" data-target="help" data-i18n="nav.help">Help</a></li>
+                        <li><a href="#" data-action="navigate" data-target="accessibility-page" data-i18n="nav.accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h5 data-i18n="footer.important">Important Notice</h5>
+                    <p class="footer-notice" data-i18n="footer.notice">NSGP is a demonstration/hackathon project and is not an official Government of India website. All data entered remains on your device.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 NSGP Demo Platform. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/i18n/locales.js"></script>
+    <script src="js/i18n/i18n.js"></script>
+    <script src="js/services/validation.js"></script>
+    <script src="js/services/crossFieldValidation.js"></script>
+    <script src="js/services/storage.js"></script>
+    <script src="js/services/audio.js"></script>
+    <script src="js/services/voice.js"></script>
+    <script src="js/services/scanner.js"></script>
+    <script src="js/services/ocr.js"></script>
+    <script src="js/data/formDefinitions.js"></script>
+    <script src="js/data/demoData.js"></script>
+    <script src="js/components/formEngine.js"></script>
+    <script src="js/components/guardian.js"></script>
+    <script src="js/components/notifications.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

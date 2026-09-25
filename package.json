@@ -1,0 +1,9 @@
+{
+  "name": "nsgp-demo",
+  "version": "1.0.0",
+  "description": "NSGP — Next-Generation Smart Government Forms",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

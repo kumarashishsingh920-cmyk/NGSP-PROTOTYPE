@@ -1,0 +1,304 @@
+/* ============================================
+   Home Page Styles
+   ============================================ */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    padding: var(--space-2xl) 0;
+    border-bottom: 4px solid var(--saffron);
+}
+
+.hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.hero-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.hero-tagline {
+    font-size: var(--font-size-lg);
+    color: var(--saffron-light);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    font-style: italic;
+}
+
+.hero-desc {
+    font-size: var(--font-size-base);
+    color: rgba(255,255,255,0.85);
+    max-width: 800px;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-actions .btn-primary {
+    background: var(--saffron);
+    border-color: var(--saffron);
+    color: var(--white);
+}
+
+.hero-actions .btn-primary:hover {
+    background: var(--saffron-dark);
+    border-color: var(--saffron-dark);
+}
+
+.hero-actions .btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border-color: var(--white);
+}
+
+.hero-actions .btn-secondary:hover {
+    background: var(--cream);
+}
+
+.hero-actions .btn-outline {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+}
+
+.hero-actions .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.1);
+}
+
+.hero-secondary-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.hero-secondary-actions .btn-scan {
+    background: var(--green);
+    border-color: var(--green);
+}
+
+.hero-secondary-actions .btn-scan:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.hero-secondary-actions .btn-outline-sm {
+    border-color: rgba(255,255,255,0.4);
+    color: var(--white);
+}
+
+.hero-secondary-actions .btn-outline-sm:hover {
+    border-color: var(--white);
+}
+
+/* Service Categories */
+.services-section {
+    padding: var(--space-2xl) 0;
+}
+
+.section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.service-category {
+    margin-bottom: var(--space-xl);
+}
+
+.category-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.category-icon {
+    font-size: 20px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s, border-color 0.15s;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--navy);
+}
+
+.service-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.service-card-header h5 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+}
+
+.service-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.service-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.service-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.meta-item {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    background: var(--off-white);
+    padding: 2px 8px;
+    border-radius: var(--border-radius);
+}
+
+.service-start-btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Demo Section */
+.demo-section {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--info-bg);
+    border: 1px solid var(--info-border);
+    border-radius: var(--border-radius-lg);
+}
+
+.demo-card {
+    border-color: var(--info-border);
+    background: var(--white);
+}
+
+.demo-card:hover {
+    border-color: var(--info);
+}
+
+/* Search */
+.search-bar {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.search-input {
+    flex: 1;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background: var(--navy);
+    color: var(--white);
+    border: 2px solid var(--navy);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+}
+
+.search-btn:hover {
+    background: var(--navy-dark);
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.filter-bar label {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.filter-select {
+    min-width: 200px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Help Page */
+.help-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-lg);
+}
+
+.help-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.help-card h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--saffron);
+}
+
+.help-card ol,
+.help-card ul {
+    padding-left: var(--space-lg);
+}
+
+.help-card li {
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}

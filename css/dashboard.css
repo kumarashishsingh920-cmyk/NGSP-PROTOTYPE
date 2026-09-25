@@ -1,0 +1,183 @@
+/* ============================================
+   Dashboard / Applications Styles
+   ============================================ */
+
+.applications-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--space-2xl);
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-lg);
+}
+
+.empty-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+.empty-state p {
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+/* Application Card */
+.app-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s;
+}
+
+.app-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.app-card-info {
+    flex: 1;
+}
+
+.app-card-info h4 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-xs);
+}
+
+.app-card-meta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.app-progress-bar {
+    width: 120px;
+    height: 8px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.app-progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--navy);
+    transition: width 0.3s;
+}
+
+.app-progress-fill.complete {
+    background: var(--success);
+}
+
+.app-card-status {
+    padding: 4px 12px;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.app-card-status.draft {
+    background: var(--warning-bg);
+    color: var(--warning);
+    border: 1px solid var(--warning-border);
+}
+
+.app-card-status.ready {
+    background: var(--success-bg);
+    color: var(--success);
+    border: 1px solid var(--success-border);
+}
+
+.app-card-status.submitted {
+    background: var(--info-bg);
+    color: var(--info);
+    border: 1px solid var(--info-border);
+}
+
+.app-card-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
+
+/* Resume Banner */
+.resume-banner {
+    background: var(--info-bg);
+    border: 1px solid var(--info-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.resume-banner-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.resume-banner-info {
+    flex: 1;
+}
+
+.resume-banner-info h4 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-xs);
+}
+
+.resume-banner-info p {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.resume-progress {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.resume-progress-bar {
+    flex: 1;
+    max-width: 200px;
+    height: 8px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.resume-progress-fill {
+    height: 100%;
+    background: var(--navy);
+    border-radius: 4px;
+}
+
+.resume-progress-text {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.resume-banner-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
